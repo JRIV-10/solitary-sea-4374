@@ -3,6 +3,9 @@ require "rails_helper"
 RSpec.describe "Search by Nation", type: :feature do
   describe "As a user" do
     before do
+      json_response = File.read("spec/fixtures/nations/all_nations.json")
+      stub_request(:get, "http://last-airbender-api.fly.dev/api/v1/characters?affiliation=").
+         to_return(status: 200, body: json_response, headers: {})
     end
 
     it "searches by nation" do

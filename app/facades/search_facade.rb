@@ -6,8 +6,11 @@ class SearchFacade
   end
 
   def nations_search
-    # require 'pry'; binding.pry
     service = SearchService.new
-    json = service.nations(@search_params) 
+    json = service.members_by_nation(@search_params) 
+    nation = json.map do |nation_data|
+      Nation.new(nation_data) 
+    end
+    require 'pry'; binding.pry
   end
 end

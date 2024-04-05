@@ -1,7 +1,8 @@
 class SearchService 
 
-  def nations 
-    get_url("/api/v1/characters?affiliation=NATION+NAME")
+  def members_by_nation(nation)
+    #  require 'pry'; binding.pry
+    get_url("/api/v1/characters?affiliation=#{nation}")
   end
 
   def get_url(url) 
