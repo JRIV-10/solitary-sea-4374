@@ -1,7 +1,6 @@
 class SearchFacade 
 
   def initialize(search_params)
-    # require 'pry'; binding.pry
     @search_params = search_params
   end
 
@@ -11,6 +10,5 @@ class SearchFacade
     nation = json.map do |nation_data|
       Nation.new(nation_data) 
     end
-    require 'pry'; binding.pry
   end
 end

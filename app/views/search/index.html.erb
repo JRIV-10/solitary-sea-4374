@@ -1,0 +1,12 @@
+<h3>Total Number of People in the Fire Nation: <%= Nation.fire_nation_members_count(@members) %></h3>
+
+<% @members.each do |member| %>
+  <div class="member">
+    <h4>Name: <%= member.name %></h4>
+    <ul>
+      <li>Allies: <%= member.display_allies %></li>
+      <li>Enemies: <%= member.display_enemies %></li>
+      <li>Affiliations: <%= member.display_affiliations %></li>
+    </ul>
+  </div>
+<% end %>
